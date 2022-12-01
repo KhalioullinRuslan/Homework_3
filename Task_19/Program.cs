@@ -1,17 +1,18 @@
 ﻿// Напишите программу, которая принимает на вход пятизначное число и проверяет, 
 // является ли оно палиндромом.
 
-int number = 123454321;
+Console.Clear();
+Console.WriteLine("Введите число");
+int number = Convert.ToInt32(Console.ReadLine());
+int revNumber = number;
+string strNumber = revNumber.ToString();
+char[] arrNumber = strNumber.ToCharArray();
+Array.Reverse(arrNumber);
+strNumber = new string(arrNumber);
+revNumber = Convert.ToInt32(strNumber);
 
-string strNumber = Convert.ToString(number);
-char[] numberCharArray = strNumber.ToCharArray();
-Array.Reverse(numberCharArray);
-string strReverseNumber = new string (numberCharArray);
-int revNumber = Convert.ToInt32(strReverseNumber);
-
-if (number == revNumber)
-   Console.WriteLine($"Число {number} - является палиндромом");
-else 
-   Console.WriteLine($"Число {number} - не является полиндромом");
-
+if(number == revNumber)
+    Console.WriteLine($"Число {number} являеться палиндромом");
+else
+    Console.WriteLine($"Число {number} не являеться палиндромом");
 
